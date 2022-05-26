@@ -12,11 +12,10 @@ class azure():
         self.drive = webdriver.Chrome()
         self.email = os.environ['email']
         self.password = os.environ["password"]
-        print(self.email, self.password)
 
     def acessar_azure(self):
         drive = self.drive
-        drive.get("https://dev.azure.com/KeenerIo")
+        drive.get(os.environ["url_azure"])
         time.sleep(2)
         
         email = drive.find_element_by_xpath('//*[@id="i0116"]')
